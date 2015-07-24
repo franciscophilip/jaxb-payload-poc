@@ -9,11 +9,11 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
         "any"
 })
 @XmlSeeAlso(value ={SerializableElement.class, ObjectFactory.class})
-public class Payload {
+public class Payload<T> {
 
     @XmlJavaTypeAdapter(AnyTypeAdapter.class)
     @XmlAnyElement(lax = true)
-    public Object any;
+    public T any;
 
 
 

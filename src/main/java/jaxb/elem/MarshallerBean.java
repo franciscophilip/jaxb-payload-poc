@@ -1,7 +1,5 @@
 package jaxb.elem;
 
-import jaxb.test.Foo;
-
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -12,8 +10,9 @@ public class MarshallerBean {
 
     private Marshaller marshaller;
 
-    public MarshallerBean() throws JAXBException {
-        JAXBContext jc = JAXBContext.newInstance(Payload.class, Foo.class, ObjectFactory.class);
+    public MarshallerBean(Class... classesToBeBound) throws JAXBException {
+
+        JAXBContext jc = JAXBContext.newInstance(Utils.add(Class.class, classesToBeBound, Payload.class));
         marshaller = jc.createMarshaller();
         marshaller.setProperty(javax.xml.bind.Marshaller.JAXB_FORMATTED_OUTPUT, true);
     }

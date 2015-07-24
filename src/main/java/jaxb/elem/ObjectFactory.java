@@ -1,6 +1,5 @@
 package jaxb.elem;
 
-import jaxb.test.Bar;
 
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlElementDecl;
@@ -24,12 +23,6 @@ public class ObjectFactory {
         return false;
     }
 
-//    WordUtils.capitalizeFully();
-
-    @XmlElementDecl(name = "bar", namespace = Namespace.NAMESPACE)
-    public JAXBElement<Bar> createBar(Bar bar) {
-        return new JAXBElement<Bar>(new QName("bar"), Bar.class, bar);
-    }
 
 
     @XmlElementDecl(name = "string", namespace = Namespace.NAMESPACE)

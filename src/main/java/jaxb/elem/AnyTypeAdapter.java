@@ -4,7 +4,6 @@ import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.adapters.HexBinaryAdapter;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
-import javax.xml.namespace.QName;
 import java.io.*;
 
 /**
@@ -45,15 +44,15 @@ public class AnyTypeAdapter extends XmlAdapter<Object, Object> {
         return v;
     }
 
-
-    private JAXBElement<String> element_marshal(Serializable z) throws IOException {
-        if (z != null) {
-            //todo
-            return new JAXBElement<>(new QName(Namespace.NAMESPACE, "serializable"), String.class, f_marshal(z));
-        }
-        return null;
-    }
-
+//
+//    private JAXBElement<String> element_marshal(Serializable z) throws IOException {
+//        if (z != null) {
+//            //todo
+//            return new JAXBElement<>(new QName(Namespace.NAMESPACE, "serializable"), String.class, f_marshal(z));
+//        }
+//        return null;
+//    }
+//
 
     public String f_marshal(Serializable z) throws IOException {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();

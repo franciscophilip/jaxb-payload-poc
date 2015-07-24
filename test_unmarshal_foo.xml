@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<payload xmlns="http://test" xmlns:ns2="http://foo">
-    <ns2:foo/>
-</payload>
