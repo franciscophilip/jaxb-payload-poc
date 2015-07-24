@@ -65,7 +65,7 @@ public class AnyTypeAdapter extends XmlAdapter<Object, Object> {
 
 
     public Serializable f_unmarshal(String z) throws IOException, ClassNotFoundException {
-        byte[] serializedBytes = hexAdapter.unmarshal(z);
+        byte[] serializedBytes = hexAdapter.unmarshal(z.trim());
         ByteArrayInputStream bais = new ByteArrayInputStream(serializedBytes);
         ObjectInputStream ois = new ObjectInputStream(bais);
         return (Serializable) ois.readObject();
